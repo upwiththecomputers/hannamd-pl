@@ -1,0 +1,95 @@
+{
+  "Metadata": {
+    "title": "Hanna Mikulska-Delgardo | Footwear Buyer",
+    "description": "Fashion industry expert with 5 years of experience as a footwear buyer. Managing production from design to delivery."
+  },
+  "Header": {
+    "name": "Hanna Mikulska-Delgardo",
+    "switchLang": "PL"
+  },
+  "Hero": {
+    "heading": "Footwear Production. From Design to Delivery.",
+    "subheading": "Fashion industry expert with 5 years of experience as a professional buyer.",
+    "cta": "View my work"
+  },
+  "About": {
+    "title": "About me",
+    "paragraphs": [
+      "I am a footwear buyer with over 5 years of experience in the fashion industry. I specialise in managing the full product lifecycle — from the initial design brief, through supplier sourcing and production oversight, to the on-time delivery of collections.",
+      "I have worked with factories in Poland, Eastern Europe, and Asia, building lasting relationships grounded in quality, reliability, and mutual trust. I understand both the creative side — trends, materials, design — and the operational one: negotiations, production schedules, and quality control.",
+      "I believe a great buyer is not just a negotiator — they are a strategist who bridges a brand's vision with market realities."
+    ]
+  },
+  "Skills": {
+    "title": "Skills",
+    "items": [
+      {
+        "title": "Category Management",
+        "description": "Planning and executing assortment strategies for women's and men's footwear collections."
+      },
+      {
+        "title": "Sourcing & Suppliers",
+        "description": "Identifying and vetting factories in Poland, Europe, and Asia. Building long-term partnerships."
+      },
+      {
+        "title": "Trend Analysis",
+        "description": "Monitoring global fashion trends and translating them into buying decisions aligned with brand DNA."
+      },
+      {
+        "title": "Negotiation",
+        "description": "Conducting price negotiations, payment terms, and production lead time agreements."
+      },
+      {
+        "title": "Quality Control",
+        "description": "Overseeing samples and production runs. Enforcing quality standards and technical specifications."
+      },
+      {
+        "title": "Project Management",
+        "description": "Coordinating production schedules, managing risk, and facilitating cross-departmental communication."
+      }
+    ]
+  },
+  "Process": {
+    "title": "How I work",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Brief & Research",
+        "description": "Analysing brand needs, reviewing seasonal trends, and defining the collection brief."
+      },
+      {
+        "number": "02",
+        "title": "Design Direction",
+        "description": "Collaborating with the creative team on shapes, materials, and colour directions."
+      },
+      {
+        "number": "03",
+        "title": "Sourcing",
+        "description": "Identifying and vetting suppliers and factories that meet quality and ethical requirements."
+      },
+      {
+        "number": "04",
+        "title": "Sampling",
+        "description": "Approving material swatches and prototypes. Iterating with the factory until the standard is met."
+      },
+      {
+        "number": "05",
+        "title": "Production",
+        "description": "Overseeing production orders, deadlines, and compliance with technical specifications."
+      },
+      {
+        "number": "06",
+        "title": "Delivery",
+        "description": "Pre-shipment quality checks, logistics coordination, and on-time collection handover."
+      }
+    ]
+  },
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "Let's work together",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "email": "hanna@mikulska-delgardo.pl",
+    "linkedin": "linkedin.com/in/hanna-mikulska-delgardo"
+  }
+}
