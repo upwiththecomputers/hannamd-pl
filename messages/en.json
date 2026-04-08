@@ -1,16 +1,38 @@
 {
   "Metadata": {
-    "title": "Hanna Mikulska-Delgardo | Footwear Buyer",
+    "title": "Hanna Mikulska-Delgaldo | Footwear Buyer",
     "description": "Fashion industry expert with 5 years of experience as a footwear buyer. Managing production from design to delivery."
   },
   "Header": {
-    "name": "Hanna Mikulska-Delgardo",
+    "name": "Hanna Mikulska-Delgaldo",
     "switchLang": "PL"
   },
   "Hero": {
     "heading": "Footwear Production. From Design to Delivery.",
     "subheading": "Fashion industry expert with 5 years of experience as a professional buyer.",
     "cta": "View my work"
+  },
+  "Work": {
+    "title": "My work",
+    "subtitle": "Selected projects and areas of specialisation",
+    "items": [
+      {
+        "label": "Seasonal collections",
+        "description": "Full-cycle assortment management for SS and AW collections — from design brief through sourcing, sampling, and on-time delivery."
+      },
+      {
+        "label": "Asia sourcing",
+        "description": "Building a network of vetted suppliers in Vietnam and China while maintaining quality standards and ethical production practices."
+      },
+      {
+        "label": "Private label",
+        "description": "End-to-end private label projects for e-commerce brands — from concept through to finished product."
+      },
+      {
+        "label": "Cost optimisation",
+        "description": "Reducing production costs while maintaining material standards and full compliance with technical specifications."
+      }
+    ]
   },
   "About": {
     "title": "About me",
@@ -51,6 +73,7 @@
   },
   "Process": {
     "title": "How I work",
+    "subtitle": "From brief to finished product",
     "steps": [
       {
         "number": "01",
@@ -89,7 +112,7 @@
     "subtitle": "Let's work together",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
-    "email": "hanna@mikulska-delgardo.pl",
-    "linkedin": "linkedin.com/in/hanna-mikulska-delgardo"
+    "email": "hanna@mikulska-delgaldo.pl",
+    "linkedin": "linkedin.com/in/hanna-mikulska-delgaldo"
   }
 }

@@ -11,7 +11,7 @@ export function Header() {
             orientation="vertical"
             className="mx-2 data-[orientation=vertical]:h-4"
           />
-          <TypographyHeader>Hanna Mikulska-Delgardo</TypographyHeader>
+          <TypographyHeader>HMD</TypographyHeader>
         </div>
         <LanguageSwitcher />
       </div>

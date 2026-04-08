@@ -1,16 +1,38 @@
 {
   "Metadata": {
-    "title": "Hanna Mikulska-Delgardo | Kupiec obuwia",
+    "title": "Hanna Mikulska-Delgaldo | Kupiec obuwia",
     "description": "Ekspert branży fashion z 5-letnim doświadczeniem jako kupiec obuwia. Zarządzanie produkcją od projektu do dostawy."
   },
   "Header": {
-    "name": "Hanna Mikulska-Delgardo",
+    "name": "Hanna Mikulska-Delgaldo",
     "switchLang": "EN"
   },
   "Hero": {
     "heading": "Produkcja obuwia. Od projektu do dostawy.",
     "subheading": "Ekspert branży fashion, z 5-letnim doświadczeniem jako kupiec.",
     "cta": "Sprawdź moje prace"
+  },
+  "Work": {
+    "title": "Moje prace",
+    "subtitle": "Wybrane projekty i obszary specjalizacji",
+    "items": [
+      {
+        "label": "Kolekcje sezonowe",
+        "description": "Zarządzanie asortymentem dla kolekcji SS i AW — od briefu projektowego przez sourcing, próbki, aż po terminową dostawę."
+      },
+      {
+        "label": "Sourcing Azja",
+        "description": "Budowanie sieci zweryfikowanych dostawców w Wietnamie i Chinach przy zachowaniu standardów jakości i etyki produkcji."
+      },
+      {
+        "label": "Private label",
+        "description": "Prowadzenie kompleksowych projektów private label dla marek e-commerce — od konceptu po gotowy produkt."
+      },
+      {
+        "label": "Optymalizacja kosztów",
+        "description": "Redukcja kosztów produkcji przy zachowaniu standardów materiałowych i pełnej zgodności ze specyfikacją techniczną."
+      }
+    ]
   },
   "About": {
     "title": "O mnie",
@@ -51,6 +73,7 @@
   },
   "Process": {
     "title": "Jak pracuję",
+    "subtitle": "Od briefu do gotowego produktu",
     "steps": [
       {
         "number": "01",
@@ -89,7 +112,7 @@
     "subtitle": "Zapraszam do współpracy",
     "emailLabel": "E-mail",
     "linkedinLabel": "LinkedIn",
-    "email": "hanna@mikulska-delgardo.pl",
-    "linkedin": "linkedin.com/in/hanna-mikulska-delgardo"
+    "email": "hanna@mikulska-delgaldo.pl",
+    "linkedin": "linkedin.com/in/hanna-mikulska-delgaldo"
   }
 }
