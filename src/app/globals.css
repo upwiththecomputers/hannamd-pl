@@ -163,3 +163,21 @@
 .animate-reveal-up {
   animation: reveal-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal-up {
+    animation: none;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

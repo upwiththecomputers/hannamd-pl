@@ -33,7 +33,7 @@ export function AboutSection() {
             {paragraphs.slice(1).map((p, i) => (
               <p
                 key={i}
-                className="font-sans font-light text-base md:text-lg leading-relaxed text-foreground/70"
+                className="font-sans font-light text-base md:text-lg leading-relaxed text-foreground/80"
               >
                 {p}
               </p>

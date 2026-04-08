@@ -44,6 +44,7 @@
   },
   "Skills": {
     "title": "Skills",
+    "subtitle": "Areas of expertise",
     "items": [
       {
         "title": "Category Management",
@@ -112,6 +113,7 @@
     "subtitle": "Let's work together",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
+    "opensNewTab": "(opens in new tab)",
     "email": "hanna@mikulska-delgaldo.pl",
     "linkedin": "linkedin.com/in/hanna-mikulska-delgaldo"
   }

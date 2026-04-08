@@ -41,7 +41,7 @@ function HeroSection({ postImageUrl }: { postImageUrl: string | null }) {
         </div>
 
         <p
-          className="text-lg/8 sm:text-xl/9 md:text-2xl/10 mb-8 md:mb-12 font-sans font-extralight text-foreground/70 animate-reveal-up"
+          className="text-lg/8 sm:text-xl/9 md:text-2xl/10 mb-8 md:mb-12 font-sans font-extralight text-foreground/80 animate-reveal-up"
           style={{ animationDelay: "350ms" }}
         >
           {t("subheading")}
@@ -50,7 +50,7 @@ function HeroSection({ postImageUrl }: { postImageUrl: string | null }) {
         <div className="animate-reveal-up" style={{ animationDelay: "600ms" }}>
           <a
             href="#work"
-            className="inline-flex items-center justify-center rounded-full border border-mist-500/50 text-mist-200 hover:bg-mist-500/10 px-8 py-3 text-base md:text-lg font-sans font-light transition-colors duration-200"
+            className="inline-flex items-center justify-center rounded-full border border-mist-500/50 text-mist-200 hover:bg-mist-500/10 px-8 py-3 text-base md:text-lg font-sans font-light transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {t("cta")}
           </a>

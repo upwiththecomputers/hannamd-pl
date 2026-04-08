@@ -28,6 +28,9 @@ export function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
+    // Respect user's motion preferences
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     // Apply initial hidden state only after JS hydrates (not server-side)
     el.style.opacity = "0";
     el.style.transform = "translateY(1.5rem)";

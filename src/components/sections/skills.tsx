@@ -12,7 +12,7 @@ export function SkillsSection() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
           <div>
             <p className="font-mono text-xs tracking-[0.25em] text-mist-500 uppercase mb-4">
-              {t("title")}
+              {t("subtitle")}
             </p>
             <h2 className="font-heading text-5xl md:text-6xl font-semibold tracking-tight text-mist-200">
               {t("title")}
@@ -41,7 +41,7 @@ export function SkillsSection() {
               <h3 className="font-heading text-xl md:text-2xl font-semibold text-mist-200 mb-3 leading-tight">
                 {t(`items.${i}.title`)}
               </h3>
-              <p className="font-sans font-light text-sm md:text-base leading-relaxed text-foreground/60">
+              <p className="font-sans font-light text-sm md:text-base leading-relaxed text-foreground/80">
                 {t(`items.${i}.description`)}
               </p>
             </div>

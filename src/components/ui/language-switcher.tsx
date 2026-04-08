@@ -18,7 +18,7 @@ export function LanguageSwitcher() {
       <button
         onClick={() => switchLocale("pl")}
         className={cn(
-          "px-2 py-1 rounded transition-colors",
+          "px-2 py-1 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
           locale === "pl"
             ? "text-mist-200 font-semibold"
             : "text-muted-foreground hover:text-foreground",
@@ -28,11 +28,11 @@ export function LanguageSwitcher() {
       >
         PL
       </button>
-      <span className="text-muted-foreground/50 select-none">|</span>
+      <span className="text-muted-foreground/50 select-none" aria-hidden="true">|</span>
       <button
         onClick={() => switchLocale("en")}
         className={cn(
-          "px-2 py-1 rounded transition-colors",
+          "px-2 py-1 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
           locale === "en"
             ? "text-mist-200 font-semibold"
             : "text-muted-foreground hover:text-foreground",

@@ -29,14 +29,14 @@ export function WorkSection() {
               className="group bg-[#0D0D09] p-8 md:p-10 hover:bg-mist-900/40 transition-colors duration-300"
             >
               <div className="flex items-start gap-6">
-                <span className="font-mono text-xs text-mist-500/50 mt-1 shrink-0 w-6">
+                <span className="font-mono text-xs text-mist-500/70 mt-1 shrink-0 w-6">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
                   <h3 className="font-heading text-2xl md:text-3xl font-semibold text-mist-200 mb-4 group-hover:text-mist-100 transition-colors">
                     {t(`items.${i}.label`)}
                   </h3>
-                  <p className="font-sans font-light text-base leading-relaxed text-foreground/60">
+                  <p className="font-sans font-light text-base leading-relaxed text-foreground/80">
                     {t(`items.${i}.description`)}
                   </p>
                 </div>
