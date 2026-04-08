@@ -31,32 +31,30 @@ export function WorkSection() {
           <div className="hidden sm:block w-px self-stretch bg-mist-500/20 mx-6" />
         </div>
 
-        {/* Footwear carousel — full-bleed light strip */}
-        <div className="-mx-4 sm:-mx-8 mb-16">
-          <div className="bg-mist-100 py-6 md:py-8">
-            <ul className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar px-[12%] sm:px-[5%] md:px-[2%]">
-              {CAROUSEL_ITEMS.map((item, i) => (
-                <li
-                  key={i}
-                  className="snap-center shrink-0 w-[76%] sm:w-[44%] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] xl:w-[calc(20%-1.2rem)]"
-                >
-                  <div className="relative aspect-square">
-                    <Image
-                      src={item.src}
-                      alt={tc(`items.${i}`)}
-                      fill
-                      className="object-contain mix-blend-multiply"
-                      sizes="(max-width:640px) 76vw, (max-width:768px) 44vw, (max-width:1024px) 33vw, 25vw"
-                    />
-                  </div>
-                  <div
-                    className="w-3/5 mx-auto h-3 rounded-full bg-mist-700/15 blur-md -mt-6"
-                    aria-hidden="true"
+        {/* Footwear carousel */}
+        <div className="mb-16">
+          <ul className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar px-[12%] sm:px-[5%] md:px-[2%]">
+            {CAROUSEL_ITEMS.map((item, i) => (
+              <li
+                key={i}
+                className="snap-center shrink-0 w-[76%] sm:w-[44%] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] xl:w-[calc(20%-1.2rem)]"
+              >
+                <div className="relative aspect-square">
+                  <Image
+                    src={item.src}
+                    alt={tc(`items.${i}`)}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width:640px) 76vw, (max-width:768px) 44vw, (max-width:1024px) 33vw, 25vw"
                   />
-                </li>
-              ))}
-            </ul>
-          </div>
+                </div>
+                <div
+                  className="w-3/5 mx-auto h-3 rounded-full bg-mist-500/10 blur-lg -mt-6"
+                  aria-hidden="true"
+                />
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Work items */}
