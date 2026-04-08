@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: isPl
-      ? "Hanna Mikulska-Delgardo | Kupiec obuwia"
-      : "Hanna Mikulska-Delgardo | Footwear Buyer",
+      ? "Hanna Mikulska-Delgaldo | Kupiec obuwia"
+      : "Hanna Mikulska-Delgaldo | Footwear Buyer",
     description: isPl
       ? "Ekspert branży fashion z 5-letnim doświadczeniem jako kupiec obuwia."
       : "Fashion industry expert with 5 years of experience as a professional footwear buyer.",
@@ -33,10 +33,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       locale: isPl ? "pl_PL" : "en_GB",
-      siteName: "Hanna Mikulska-Delgardo",
+      siteName: "Hanna Mikulska-Delgaldo",
       title: isPl
-        ? "Hanna Mikulska-Delgardo | Kupiec obuwia"
-        : "Hanna Mikulska-Delgardo | Footwear Buyer",
+        ? "Hanna Mikulska-Delgaldo | Kupiec obuwia"
+        : "Hanna Mikulska-Delgaldo | Footwear Buyer",
       description: isPl
         ? "Ekspert branży fashion z 5-letnim doświadczeniem jako kupiec obuwia."
         : "Fashion industry expert with 5 years of experience as a professional footwear buyer.",

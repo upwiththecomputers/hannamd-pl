@@ -8,16 +8,18 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-mist-50: oklch(0.97 0.015 220);
-  --color-mist-100: oklch(0.93 0.025 220);
-  --color-mist-200: oklch(0.87 0.035 220);
-  --color-mist-300: oklch(0.79 0.045 220);
-  --color-mist-400: oklch(0.68 0.055 220);
-  --color-mist-500: oklch(0.56 0.065 220);
-  --color-mist-600: oklch(0.44 0.055 220);
-  --color-mist-700: oklch(0.34 0.045 220);
-  --color-mist-800: oklch(0.24 0.035 220);
-  --color-mist-900: oklch(0.15 0.02 220);
+  /* Warm palette extracted from the hero photo:
+     cream/ivory for headings, dusty rose/mauve for borders & accents */
+  --color-mist-50:  oklch(0.97 0.008 65);
+  --color-mist-100: oklch(0.93 0.015 65);
+  --color-mist-200: oklch(0.89 0.022 65);
+  --color-mist-300: oklch(0.80 0.035 50);
+  --color-mist-400: oklch(0.68 0.050 35);
+  --color-mist-500: oklch(0.53 0.065 15);
+  --color-mist-600: oklch(0.41 0.055 10);
+  --color-mist-700: oklch(0.31 0.040 10);
+  --color-mist-800: oklch(0.22 0.025 10);
+  --color-mist-900: oklch(0.14 0.015 10);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -143,5 +145,21 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
   }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal-up {
+  animation: reveal-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
