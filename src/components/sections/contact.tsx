@@ -39,13 +39,14 @@ export function ContactSection() {
               href={`https://${t("linkedin")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 group"
+              className="inline-flex items-center gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
             >
               <span className="flex items-center justify-center w-12 h-12 rounded-full border border-mist-500/40 text-mist-500 group-hover:border-mist-400 group-hover:text-mist-300 transition-all duration-200 shrink-0">
                 <LinkedinIcon className="w-5 h-5" />
               </span>
               <span className="font-sans font-light text-lg text-mist-200 group-hover:text-mist-100 transition-colors break-all">
                 {t("linkedin")}
+                <span className="sr-only"> {t("opensNewTab")}</span>
               </span>
             </a>
           </div>
@@ -53,14 +54,14 @@ export function ContactSection() {
       </div>
 
       {/* Footer */}
-      <div className="max-w-6xl mx-auto mt-20 pt-8 border-t border-mist-500/10 flex items-center justify-between gap-4">
-        <p className="font-heading italic text-sm text-mist-500/40">
+      <footer className="max-w-6xl mx-auto mt-20 pt-8 border-t border-mist-500/10 flex items-center justify-between gap-4">
+        <p className="font-heading italic text-sm text-mist-500/70">
           Hanna Mikulska-Delgaldo
         </p>
-        <p className="font-mono text-xs text-muted-foreground/30">
+        <p className="font-mono text-xs text-muted-foreground/70">
           © {new Date().getFullYear()}
         </p>
-      </div>
+      </footer>
     </section>
   );
 }

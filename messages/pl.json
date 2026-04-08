@@ -44,6 +44,7 @@
   },
   "Skills": {
     "title": "Umiejętności",
+    "subtitle": "Obszary specjalizacji",
     "items": [
       {
         "title": "Zarządzanie kategorią",
@@ -112,6 +113,7 @@
     "subtitle": "Zapraszam do współpracy",
     "emailLabel": "E-mail",
     "linkedinLabel": "LinkedIn",
+    "opensNewTab": "(otwiera w nowej karcie)",
     "email": "hanna@mikulska-delgaldo.pl",
     "linkedin": "linkedin.com/in/hanna-mikulska-delgaldo"
   }

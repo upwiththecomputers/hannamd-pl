@@ -1,5 +1,4 @@
 import { Separator } from "@/components/ui/separator";
-import { TypographyHeader } from "@/components/ui/typography";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 
 export function Header() {
@@ -11,9 +10,13 @@ export function Header() {
             orientation="vertical"
             className="mx-2 data-[orientation=vertical]:h-4"
           />
-          <TypographyHeader>HMD</TypographyHeader>
+          <span className="scroll-m-20 p-4 text-center uppercase text-xl font-sans font-extrabold tracking-tight text-balance">
+            HMD
+          </span>
         </div>
-        <LanguageSwitcher />
+        <nav aria-label="Language">
+          <LanguageSwitcher />
+        </nav>
       </div>
     </header>
   );

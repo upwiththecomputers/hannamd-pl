@@ -53,13 +53,16 @@ export function ProcessSection() {
             style={{ background: stepBg[i] }}
           >
             {/* Large italic number as background accent */}
-            <div className="font-heading italic font-bold text-[7rem] md:text-[9rem] leading-none select-none text-mist-500/10 mb-0 -mt-4 -ml-2">
+            <div
+              className="font-heading italic font-bold text-[7rem] md:text-[9rem] leading-none select-none text-mist-500/10 mb-0 -mt-4 -ml-2"
+              aria-hidden="true"
+            >
               {t(`steps.${i}.number`)}
             </div>
             <h3 className="font-heading text-xl md:text-2xl font-semibold text-mist-200 mb-3 -mt-4">
               {t(`steps.${i}.title`)}
             </h3>
-            <p className="font-sans font-light text-sm md:text-base leading-relaxed text-foreground/60">
+            <p className="font-sans font-light text-sm md:text-base leading-relaxed text-foreground/80">
               {t(`steps.${i}.description`)}
             </p>
           </div>
