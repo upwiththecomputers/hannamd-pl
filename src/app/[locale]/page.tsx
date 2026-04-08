@@ -93,14 +93,14 @@ export default async function HomePage() {
         </div>
       </div>
 
-      {/* Work — CTA scroll target */}
-      <ScrollReveal>
-        <WorkSection />
-      </ScrollReveal>
-
       {/* About */}
       <ScrollReveal>
         <AboutSection />
+      </ScrollReveal>
+
+      {/* Work — CTA scroll target */}
+      <ScrollReveal>
+        <WorkSection />
       </ScrollReveal>
 
       {/* Skills */}
