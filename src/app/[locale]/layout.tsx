@@ -8,11 +8,13 @@ import { Header } from "@/components/ui/header";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import { type SanityDocument } from "next-sanity";
-import {
-  createImageUrlBuilder,
-  type SanityImageSource,
-} from "@sanity/image-url";
 import { client } from "@/sanity/client";
+import {
+  urlFor,
+  WELCOME_POST_QUERY,
+  SITE_SETTINGS_QUERY,
+  fetchOptions,
+} from "@/sanity/queries";
 import "../globals.css";
 
 const inter = localFont({
@@ -52,35 +54,43 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-const POST_QUERY = `*[_type == "post" && slug.current == "welcome"][0] {
-  title, body, poster
-}`;
-
-const { projectId, dataset } = client.config();
-const urlFor = (source: SanityImageSource) =>
-  projectId && dataset
-    ? createImageUrlBuilder({ projectId, dataset }).image(source)
-    : null;
+const FALLBACK = {
+  siteName: "Hanna Mikulska-Delgaldo",
+  siteUrl: "https://hannamd.pl",
+  seo: {
+    pl: {
+      title: "Hanna Mikulska-Delgaldo | Kupiec obuwia",
+      description:
+        "Ekspert branży fashion z 5-letnim doświadczeniem jako kupiec obuwia.",
+    },
+    en: {
+      title: "Hanna Mikulska-Delgaldo | Footwear Buyer",
+      description:
+        "Fashion industry expert with 5 years of experience as a professional footwear buyer.",
+    },
+  },
+} as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const isPl = locale === "pl";
+  const lang = isPl ? "pl" : "en";
 
-  const post = await client.fetch<SanityDocument>(
-    POST_QUERY,
-    {},
-    { next: { revalidate: 30 } },
-  );
-  const ogImageUrl = post?.poster
-    ? urlFor(post.poster)?.width(1200).height(630).url()
+  const [settings, post] = await Promise.all([
+    client.fetch<SanityDocument | null>(SITE_SETTINGS_QUERY, {}, fetchOptions),
+    client.fetch<SanityDocument | null>(WELCOME_POST_QUERY, {}, fetchOptions),
+  ]);
+
+  const siteName = settings?.siteName ?? FALLBACK.siteName;
+  const siteUrl = settings?.siteUrl ?? FALLBACK.siteUrl;
+  const title = settings?.seo?.[lang]?.title ?? FALLBACK.seo[lang].title;
+  const description =
+    settings?.seo?.[lang]?.description ?? FALLBACK.seo[lang].description;
+
+  const ogImage = settings?.ogImage ?? post?.poster;
+  const ogImageUrl = ogImage
+    ? urlFor(ogImage)?.width(1200).height(630).url()
     : undefined;
-
-  const title = isPl
-    ? "Hanna Mikulska-Delgaldo | Kupiec obuwia"
-    : "Hanna Mikulska-Delgaldo | Footwear Buyer";
-  const description = isPl
-    ? "Ekspert branży fashion z 5-letnim doświadczeniem jako kupiec obuwia."
-    : "Fashion industry expert with 5 years of experience as a professional footwear buyer.";
 
   return {
     title,
@@ -95,8 +105,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       locale: isPl ? "pl_PL" : "en_GB",
-      url: isPl ? "https://hannamd.pl/" : "https://hannamd.pl/en",
-      siteName: "Hanna Mikulska-Delgaldo",
+      url: isPl ? `${siteUrl}/` : `${siteUrl}/en`,
+      siteName,
       title,
       description,
       images: ogImageUrl
