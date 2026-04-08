@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { type SanityDocument } from "next-sanity";
-import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
 import { useTranslations } from "next-intl";
 import { client } from "@/sanity/client";
-import { Button } from "@/components/ui/button";
+import { urlFor, WELCOME_POST_QUERY, fetchOptions } from "@/sanity/queries";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { WorkSection } from "@/components/sections/work";
@@ -11,18 +10,6 @@ import { AboutSection } from "@/components/sections/about";
 import { SkillsSection } from "@/components/sections/skills";
 import { ProcessSection } from "@/components/sections/process";
 import { ContactSection } from "@/components/sections/contact";
-
-const POST_QUERY = `*[_type == "post" && slug.current == "welcome"][0] {
-    title, body, poster
-  }`;
-
-const { projectId, dataset } = client.config();
-const urlFor = (source: SanityImageSource) =>
-  projectId && dataset
-    ? createImageUrlBuilder({ projectId, dataset }).image(source)
-    : null;
-
-const options = { next: { revalidate: 30 } };
 
 function HeroSection({ postImageUrl }: { postImageUrl: string | null }) {
   const t = useTranslations("Hero");
@@ -81,7 +68,7 @@ function HeroSection({ postImageUrl }: { postImageUrl: string | null }) {
 }
 
 export default async function HomePage() {
-  const post = await client.fetch<SanityDocument>(POST_QUERY, {}, options);
+  const post = await client.fetch<SanityDocument>(WELCOME_POST_QUERY, {}, fetchOptions);
   const postImageUrl = post?.poster ? urlFor(post.poster)?.url() ?? null : null;
 
   return (
