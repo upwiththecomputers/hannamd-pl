@@ -5,6 +5,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/ui/header";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../globals.css";
 
 type Props = {
@@ -77,6 +78,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             </a>
             <Header />
             <main id="main-content">{children}</main>
+            <SpeedInsights />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
