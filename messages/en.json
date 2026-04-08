@@ -108,6 +108,15 @@
       }
     ]
   },
+  "FootwearCarousel": {
+    "items": [
+      "Pink fuzzy slippers with bow details",
+      "Black mesh sneakers with white sole",
+      "White high-top sneakers by Bekkin",
+      "Baby velcro shoes by Bekkin",
+      "Cream tall lace-up boots"
+    ]
+  },
   "Contact": {
     "title": "Contact",
     "subtitle": "Let's work together",
