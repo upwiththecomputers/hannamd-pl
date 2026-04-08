@@ -18,7 +18,7 @@ export function AboutSection() {
               className="font-heading italic font-bold text-[8rem] md:text-[10rem] leading-none select-none text-mist-500/8 -ml-3 -mb-8"
               aria-hidden="true"
             >
-              H
+              Hanna
             </div>
             <div className="w-8 h-0.5 bg-mist-500" />
           </div>

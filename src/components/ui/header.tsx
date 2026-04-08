@@ -10,7 +10,7 @@ export function Header() {
             orientation="vertical"
             className="mx-2 data-[orientation=vertical]:h-4"
           />
-          <span className="scroll-m-20 p-4 text-center uppercase text-xl font-sans font-extrabold tracking-tight text-balance">
+          <span className="scroll-m-20 p-4 text-left uppercase text-xl font-sans font-extrabold tracking-tight text-balance">
             HMD
           </span>
         </div>

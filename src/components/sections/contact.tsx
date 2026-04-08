@@ -44,10 +44,6 @@ export function ContactSection() {
               <span className="flex items-center justify-center w-12 h-12 rounded-full border border-mist-500/40 text-mist-500 group-hover:border-mist-400 group-hover:text-mist-300 transition-all duration-200 shrink-0">
                 <LinkedinIcon className="w-5 h-5" />
               </span>
-              <span className="font-sans font-light text-lg text-mist-200 group-hover:text-mist-100 transition-colors break-all">
-                {t("linkedin")}
-                <span className="sr-only"> {t("opensNewTab")}</span>
-              </span>
             </a>
           </div>
         </div>

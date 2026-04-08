@@ -68,8 +68,14 @@ function HeroSection({ postImageUrl }: { postImageUrl: string | null }) {
 }
 
 export default async function HomePage() {
-  const post = await client.fetch<SanityDocument>(WELCOME_POST_QUERY, {}, fetchOptions);
-  const postImageUrl = post?.poster ? urlFor(post.poster)?.url() ?? null : null;
+  const post = await client.fetch<SanityDocument>(
+    WELCOME_POST_QUERY,
+    {},
+    fetchOptions,
+  );
+  const postImageUrl = post?.poster
+    ? (urlFor(post.poster)?.url() ?? null)
+    : null;
 
   return (
     <div className="flex flex-col flex-1 dark:bg-[#0D0D09]">
