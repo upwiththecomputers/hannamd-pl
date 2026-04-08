@@ -108,6 +108,15 @@
       }
     ]
   },
+  "FootwearCarousel": {
+    "items": [
+      "Różowe futrzane kapcie z kokardkami",
+      "Czarne sneakersy z siateczki z białą podeszwą",
+      "Białe wysokie sneakersy Bekkin",
+      "Dziecięce buty na rzepy Bekkin",
+      "Kremowe wysokie botki sznurowane"
+    ]
+  },
   "Contact": {
     "title": "Kontakt",
     "subtitle": "Zapraszam do współpracy",
