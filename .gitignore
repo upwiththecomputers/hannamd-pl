@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# turbo
+.turbo
+apps/*/.turbo
+
+# app build outputs (nested)
+apps/web/.next/
+apps/studio/dist/

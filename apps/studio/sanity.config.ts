@@ -1,9 +1,7 @@
-"use client";
-
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
-import { post, siteSettings } from "@/sanity/schemas";
+import { post, siteSettings } from "./schemas";
 
 export default defineConfig({
   name: "default",
