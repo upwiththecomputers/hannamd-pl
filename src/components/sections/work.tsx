@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -15,11 +18,48 @@ export function WorkSection() {
   const t = useTranslations("Work");
   const tc = useTranslations("FootwearCarousel");
 
+  const outerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    const outer = outerRef.current;
+    const track = trackRef.current;
+    if (!outer || !track) return;
+
+    const update = () => {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const trackWidth = track.scrollWidth;
+      outer.style.height = `${vh + Math.max(0, trackWidth - vw)}px`;
+    };
+
+    const onScroll = () => {
+      const outer = outerRef.current;
+      const track = trackRef.current;
+      if (!outer || !track) return;
+      const scrolledInto = -outer.getBoundingClientRect().top;
+      const maxTranslate = track.scrollWidth - window.innerWidth;
+      const translateX = Math.min(Math.max(0, scrolledInto), maxTranslate);
+      track.style.transform = `translateX(${-translateX}px)`;
+    };
+
+    update();
+    onScroll();
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
   return (
-    <section id="work" className="px-4 sm:px-8 py-16 md:py-24 border-t border-mist-500/10">
-      <div className="max-w-6xl mx-auto">
-        {/* Header row */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
+    <section id="work" className="py-16 md:py-24 border-t border-mist-500/10">
+      {/* Header row */}
+      <div className="px-4 sm:px-8 max-w-6xl mx-auto mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
             <p className="font-mono text-xs tracking-[0.25em] text-mist-500 uppercase mb-4">
               {t("subtitle")}
@@ -30,22 +70,24 @@ export function WorkSection() {
           </div>
           <div className="hidden sm:block w-px self-stretch bg-mist-500/20 mx-6" />
         </div>
+      </div>
 
-        {/* Footwear carousel */}
-        <div className="mb-16">
-          <ul className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar px-[12%] sm:px-[5%] md:px-[2%]">
+      {/* Footwear carousel — scroll-driven, full-bleed */}
+      <div ref={outerRef} className="mb-16 relative">
+        <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+          <ul ref={trackRef} className="flex gap-6 md:gap-10 will-change-transform">
             {CAROUSEL_ITEMS.map((item, i) => (
               <li
                 key={i}
-                className="snap-center shrink-0 w-[76%] sm:w-[44%] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] xl:w-[calc(20%-1.2rem)]"
+                className="shrink-0 w-screen md:w-[85vw] lg:w-[80vw]"
               >
-                <div className="relative aspect-square">
+                <div className="relative aspect-square px-8 sm:px-16 md:px-20 max-h-[85vh]">
                   <Image
                     src={item.src}
                     alt={tc(`items.${i}`)}
                     fill
                     className="object-contain"
-                    sizes="(max-width:640px) 76vw, (max-width:768px) 44vw, (max-width:1024px) 33vw, 25vw"
+                    sizes="(max-width:768px) 100vw, 85vw"
                   />
                 </div>
                 <div
@@ -56,8 +98,10 @@ export function WorkSection() {
             ))}
           </ul>
         </div>
+      </div>
 
-        {/* Work items */}
+      {/* Work items */}
+      <div className="px-4 sm:px-8 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-mist-500/10">
           {Array.from({ length: ITEM_COUNT }, (_, i) => (
             <div
