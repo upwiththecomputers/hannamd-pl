@@ -1,7 +1,7 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
-import { post, siteSettings } from "./schemas";
+import { schemaTypes } from "./schemas";
 
 export default defineConfig({
   name: "default",
@@ -33,6 +33,6 @@ export default defineConfig({
   ],
 
   schema: {
-    types: [post, siteSettings],
+    types: schemaTypes,
   },
 });
