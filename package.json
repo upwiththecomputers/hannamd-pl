@@ -9,6 +9,7 @@
     "lint": "turbo lint"
   },
   "devDependencies": {
+    "next": "16.2.1",
     "oxlint": "latest",
     "turbo": "latest"
   }
