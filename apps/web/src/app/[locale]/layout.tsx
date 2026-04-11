@@ -11,7 +11,6 @@ import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
 import {
   urlFor,
-  WELCOME_POST_QUERY,
   SITE_SETTINGS_QUERY,
   fetchOptions,
 } from "@/sanity/queries";
@@ -76,10 +75,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isPl = locale === "pl";
   const lang = isPl ? "pl" : "en";
 
-  const [settings, post] = await Promise.all([
-    client.fetch<SanityDocument | null>(SITE_SETTINGS_QUERY, {}, fetchOptions),
-    client.fetch<SanityDocument | null>(WELCOME_POST_QUERY, {}, fetchOptions),
-  ]);
+  const settings = await client.fetch<SanityDocument | null>(
+    SITE_SETTINGS_QUERY,
+    {},
+    fetchOptions,
+  );
 
   const siteName = settings?.siteName ?? FALLBACK.siteName;
   const siteUrl = settings?.siteUrl ?? FALLBACK.siteUrl;
@@ -87,9 +87,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description =
     settings?.seo?.[lang]?.description ?? FALLBACK.seo[lang].description;
 
-  const ogImage = settings?.ogImage ?? post?.poster;
-  const ogImageUrl = ogImage
-    ? urlFor(ogImage)?.width(1200).height(630).url()
+  const ogImageUrl = settings?.ogImage
+    ? urlFor(settings.ogImage)?.width(1200).height(630).url()
     : undefined;
 
   return {

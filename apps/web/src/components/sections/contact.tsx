@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import type { ContactSectionData } from "@/sanity/types";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -13,8 +13,8 @@ function LinkedinIcon({ className }: { className?: string }) {
   );
 }
 
-export function ContactSection() {
-  const t = useTranslations("Contact");
+export function ContactSection({ data }: { data: ContactSectionData }) {
+  if (!data) return null;
 
   return (
     <section className="px-4 sm:px-8 py-16 md:py-24 border-t border-mist-500/10">
@@ -23,28 +23,46 @@ export function ContactSection() {
           {/* Left */}
           <div>
             <p className="font-mono text-xs tracking-[0.25em] text-mist-500 uppercase mb-4">
-              {t("subtitle")}
+              {data.subtitle}
             </p>
             <h2 className="font-heading italic text-5xl md:text-6xl font-semibold tracking-tight text-mist-200">
-              {t("title")}
+              {data.title}
             </h2>
           </div>
 
           {/* Right */}
-          <div className="flex flex-col justify-end md:pt-16">
-            <p className="font-mono text-xs tracking-[0.25em] text-mist-500 uppercase mb-4">
-              {t("linkedinLabel")}
-            </p>
-            <a
-              href={`https://${t("linkedin")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
-            >
-              <span className="flex items-center justify-center w-12 h-12 rounded-full border border-mist-500/40 text-mist-500 group-hover:border-mist-400 group-hover:text-mist-300 transition-all duration-200 shrink-0">
-                <LinkedinIcon className="w-5 h-5" />
-              </span>
-            </a>
+          <div className="flex flex-col justify-end md:pt-16 gap-8">
+            {data.email && (
+              <div>
+                <p className="font-mono text-xs tracking-[0.25em] text-mist-500 uppercase mb-4">
+                  Email
+                </p>
+                <a
+                  href={`mailto:${data.email}`}
+                  className="font-sans font-light text-lg text-mist-200 hover:text-mist-100 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded"
+                >
+                  {data.email}
+                </a>
+              </div>
+            )}
+
+            {data.linkedinUrl && (
+              <div>
+                <p className="font-mono text-xs tracking-[0.25em] text-mist-500 uppercase mb-4">
+                  LinkedIn
+                </p>
+                <a
+                  href={data.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
+                >
+                  <span className="flex items-center justify-center w-12 h-12 rounded-full border border-mist-500/40 text-mist-500 group-hover:border-mist-400 group-hover:text-mist-300 transition-all duration-200 shrink-0">
+                    <LinkedinIcon className="w-5 h-5" />
+                  </span>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

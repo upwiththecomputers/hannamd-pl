@@ -1,8 +1,7 @@
-import { useTranslations } from "next-intl";
+import type { AboutSectionData } from "@/sanity/types";
 
-export function AboutSection() {
-  const t = useTranslations("About");
-  const paragraphs = [t("paragraphs.0"), t("paragraphs.1"), t("paragraphs.2")];
+export function AboutSection({ data }: { data: AboutSectionData }) {
+  if (!data) return null;
 
   return (
     <section className="px-4 sm:px-8 py-16 md:py-24 border-t border-mist-500/10">
@@ -11,7 +10,7 @@ export function AboutSection() {
           {/* Label + heading */}
           <div className="lg:sticky lg:top-24">
             <p className="font-mono text-xs tracking-[0.25em] text-mist-500 uppercase mb-4">
-              {t("title")}
+              {data.title}
             </p>
             {/* Decorative large letter */}
             <div
@@ -25,12 +24,12 @@ export function AboutSection() {
 
           {/* Text content */}
           <div className="space-y-8">
-            {/* First paragraph as pull-quote */}
+            {/* Pull quote */}
             <p className="font-heading italic text-xl md:text-2xl leading-relaxed text-mist-200">
-              {paragraphs[0]}
+              {data.pullQuote}
             </p>
 
-            {paragraphs.slice(1).map((p, i) => (
+            {[data.paragraph1, data.paragraph2].filter(Boolean).map((p, i) => (
               <p
                 key={i}
                 className="font-sans font-light text-base md:text-lg leading-relaxed text-foreground/80"
