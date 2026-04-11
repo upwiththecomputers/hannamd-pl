@@ -1,5 +1,6 @@
 {
   "installCommand": "bun install",
   "buildCommand": "bunx turbo build --filter=@hannamd/web",
-  "outputDirectory": "apps/web/.next"
+  "outputDirectory": "apps/web/.next",
+  "framework": "nextjs"
 }
