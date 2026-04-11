@@ -23,6 +23,19 @@ export const heroSectionType = defineType({
       type: 'localeString',
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'image',
+      title: 'Hero Image',
+      type: 'image',
+      options: {hotspot: true},
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'localeString',
+        }),
+      ],
+    }),
   ],
   preview: {
     prepare: () => ({title: 'Hero Section'}),

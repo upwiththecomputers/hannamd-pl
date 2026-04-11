@@ -16,6 +16,25 @@ export const workSectionType = defineType({
       type: 'localeString',
     }),
     defineField({
+      name: 'images',
+      title: 'Carousel Images',
+      description: 'Images displayed in the scroll-driven carousel above the work items',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: {hotspot: true},
+          fields: [
+            defineField({
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'localeString',
+            }),
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'items',
       title: 'Work Items',
       type: 'array',
@@ -33,24 +52,6 @@ export const workSectionType = defineType({
               name: 'description',
               title: 'Description',
               type: 'localeText',
-            }),
-            defineField({
-              name: 'images',
-              title: 'Carousel Images',
-              type: 'array',
-              of: [
-                {
-                  type: 'image',
-                  options: {hotspot: true},
-                  fields: [
-                    defineField({
-                      name: 'alt',
-                      title: 'Alt Text',
-                      type: 'localeString',
-                    }),
-                  ],
-                },
-              ],
             }),
           ],
           preview: {
